@@ -55,6 +55,11 @@ body {
         padding-bottom: 6rem !important;
     }
 
+    .px-lg-6 {
+        padding-left: 10rem !important;
+        padding-right: 10rem !important;
+
+    }
 }
 
 
@@ -98,19 +103,14 @@ body {
 .mb-6 {
     margin-bottom: 4rem !important;
 }
-/* Move the previous and next buttons */
-.carousel-control-prev {
-    left: -40px; /* Move the previous button 40px to the left */
-}
 
-.carousel-control-next {
-    right: -40px; /* Move the next button 40px to the right */
-}
+
+
 
 /* Customize the inactive button design */
 .carousel-control-prev,
 .carousel-control-next {
-    border: 0.9px solid #F53E3E; 
+    border: 0.9px solid #F53E3E;
     height: 75px;
     width: 75px;
     padding: 10px;
@@ -122,18 +122,20 @@ body {
 /* Customize the icon color */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-   
-    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(10000%) hue-rotate(0deg); /* Adjust the color to match your gradient */
+
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(10000%) hue-rotate(0deg);
+    /* Adjust the color to match your gradient */
 }
 
 /* Customize the active button design */
 .carousel-control-prev:active,
 .carousel-control-next:active {
-   
+
     background: linear-gradient(180deg, #C44EE1 0%, #F53E3E 100%) !important;
 }
-.carousel-indicators [data-bs-target]{
-  
+
+.carousel-indicators [data-bs-target] {
+
     border: 1px solid #F53E3E !important;
     width: 13px;
     height: 13px;
@@ -141,4 +143,29 @@ body {
     margin: 0 5px;
     transition: all 0.5s ease;
     opacity: 1;
+}
+
+@media screen and (min-width: 1080px) {
+
+    /* Move the previous and next buttons */
+    .carousel-control-prev {
+        left: -40px;
+        /* Move the previous button 40px to the left */
+    }
+
+    .carousel-control-next {
+        right: -40px;
+        /* Move the next button 40px to the right */
+    }
+
+}
+
+@media screen and (max-width: 1080px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        height: 40px;
+        width: 40px;
+    }
+
 }
