@@ -98,3 +98,42 @@ body {
 .mb-6 {
     margin-bottom: 4rem !important;
 }
+/* Move the previous and next buttons */
+.carousel-control-prev {
+    left: -40px; /* Move the previous button 40px to the left */
+}
+
+.carousel-control-next {
+    right: -40px; /* Move the next button 40px to the right */
+}
+
+/* Customize the inactive button design */
+.carousel-control-prev,
+.carousel-control-next {
+    border: 0.9px solid transparent; 
+    border-image-source: linear-gradient(180deg, #C44EE1 0%, #F53E3E 100%);
+    border-image-slice: 1;
+    background-color: transparent; 
+    height: 75px;
+    width: 75px;
+    padding: 10px;
+    border-radius: 50% !important;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Customize the icon color */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+ margin: 5px;
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(10000%) hue-rotate(0deg); /* Adjust the color to match your gradient */
+}
+
+/* Customize the active button design */
+.carousel-control-prev:active,
+.carousel-control-next:active {
+    border: 0.9px solid transparent; /* Transparent border to hold the gradient */
+    border-image-source: linear-gradient(180deg, #C44EE1 0%, #F53E3E 100%);
+    border-image-slice: 1;
+    background: linear-gradient(180deg, #C44EE1 0%, #F53E3E 100%) !important;
+}
