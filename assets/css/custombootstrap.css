@@ -149,6 +149,10 @@ body {
     opacity: 1;
 }
 
+.border-primary {
+    border: 1px solid var(--Schemes-Outline, #79747E) !important;
+}
+
 @media screen and (min-width: 1080px) {
 
     /* Move the previous and next buttons */
