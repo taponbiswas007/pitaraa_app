@@ -84,11 +84,6 @@ body {
 }
 
 .text-highlight-secondary {
-    /* background: linear-gradient(180deg, #C44EE1 0%, #F53E3E 100%);
-    color: transparent !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important; */
     color: #F53E3E !important;
 }
 
