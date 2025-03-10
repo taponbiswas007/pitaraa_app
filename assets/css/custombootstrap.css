@@ -147,7 +147,10 @@ body {
 .border-primary {
     border: 1px solid var(--Schemes-Outline, #79747E) !important;
 }
-
+.bg-lg-full{
+    background-size: 100% 100% !important;
+    background-position: center !important;
+}
 @media screen and (min-width: 1080px) {
 
     /* Move the previous and next buttons */
@@ -177,5 +180,11 @@ body {
 @media screen and (max-width: 1400px) {
     .w-xl-50 {
         width: 53% !important;
+    }
+}
+@media screen and (max-width: 992px) {
+   .bg-cover {
+        background-size: cover !important;
+        background-position: center !important;
     }
 }
