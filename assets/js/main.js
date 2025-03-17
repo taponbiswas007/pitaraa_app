@@ -1,11 +1,14 @@
 $(document).ready(function () {
-    $('.center').slick({
+    let slider = $('.center');
+
+    slider.slick({
         centerMode: true,
         arrows: true,
         dots: true,
         autoplay: true,
         autoplaySpeed: 3000,
         slidesToShow: 5,
+        infinite: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -26,31 +29,33 @@ $(document).ready(function () {
         ]
     });
 
-    // Function to update timer
+    let timerElement = $('<div class="slider-timer">3s</div>');
+    $('.mobilescreenslider').append(timerElement);
+
+    let interval;
     function startSliderTimer() {
-        let timeLeft = 3; // Start from 3 seconds
-        let timerElement = $('<div class="slider-timer">3s</div>');
+        let timeLeft = 3; // Start from 3s
+        $('.slider-timer').text(timeLeft + "s");
 
-        // Append timer to the current active slide
-        $('.mobilescreenslider').append(timerElement);
-
-        let interval = setInterval(() => {
+        interval = setInterval(() => {
             timeLeft--;
-            if (timeLeft <= 0) {
-                timeLeft = 3; // Reset timer after 3s
+            if (timeLeft < 0) {
+                clearInterval(interval); // Stop countdown at 0
+                slider.slick('slickNext'); // Move to the next slide manually
+                return;
             }
             $('.slider-timer').text(timeLeft + "s");
         }, 1000);
-
-        $('.center').on('beforeChange', function () {
-            clearInterval(interval); // Stop old timer
-            $('.slider-timer').remove(); // Remove old timer
-        });
-
-        $('.center').on('afterChange', function () {
-            startSliderTimer(); // Restart timer for new slide
-        });
     }
 
-    startSliderTimer(); // Start on load
+    slider.on('beforeChange', function () {
+        clearInterval(interval); // Stop old timer
+        $('.slider-timer').text("0s"); // Stay at 0s during slide transition
+    });
+
+    slider.on('afterChange', function () {
+        startSliderTimer(); // Restart timer for new slide
+    });
+
+    startSliderTimer(); // Start on page load
 });
