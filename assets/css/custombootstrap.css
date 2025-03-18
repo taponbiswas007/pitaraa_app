@@ -385,3 +385,45 @@ body {
         right: -28px;
     }
 }
+
+.downloadBtn {
+    height: 70px;
+}
+
+@media screen and (max-width: 1400px) and (min-width: 992px) {
+    .downloadBtn {
+        height: 59px;
+    }
+}
+
+#scrollToTopBtn {
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background: linear-gradient(180deg, #C44EE1 0%, #F53E3E 100%);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, transform 0.3s;
+    display: none;
+    /* Hidden by default */
+}
+
+#scrollToTopBtn:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+#scrollToTopBtn svg {
+    width: 24px;
+    height: 24px;
+}

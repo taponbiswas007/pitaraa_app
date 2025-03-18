@@ -58,4 +58,19 @@ $(document).ready(function () {
     });
 
     startSliderTimer(); // Start on page load
+
+    // Show/hide the button based on scroll position
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('#scrollToTopBtn').fadeIn();
+        } else {
+            $('#scrollToTopBtn').fadeOut();
+        }
+    });
+
+    // Smooth scroll to top when the button is clicked
+    $('#scrollToTopBtn').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+    });
 });
